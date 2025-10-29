@@ -5,9 +5,7 @@ import './App.css'
 
 
 // imports for the new components
-import Header from './components/Header.jsx';
-import MainContent from './components/MainContent.jsx';
-import Footer from './components/Footer.jsx';
+
 import UserProfile from './UserProfile';
 
 function App() {
