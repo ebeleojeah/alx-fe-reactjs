@@ -1,7 +1,10 @@
+import UserProfile from './UserProfile';
+
 function MainContent() {
   return (
-    <main>
-      <p>I love to visit New York, Paris, and Tokyo.</p>
+    <main style={{ padding: '2rem', flex: 1 }}>
+      <h2 style={{ textAlign: 'center' }}>Welcome!</h2>
+      <UserProfile />
     </main>
   );
 }

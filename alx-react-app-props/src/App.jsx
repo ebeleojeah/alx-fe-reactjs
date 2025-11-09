@@ -3,6 +3,7 @@ import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 import ProfilePage from './components/ProfilePage';
+import UserProfile from './components/UserProfile'; // Added: for context usage
 import UserContext from './components/UserContext';
 
 function App() {
@@ -16,9 +17,10 @@ function App() {
       <Header />
       <MainContent />
 
-      {/* Context Provider */}
+      {/* Context Provider wraps ProfilePage AND UserProfile */}
       <UserContext.Provider value={userData}>
         <ProfilePage />
+        <UserProfile /> {/* Optional: show profile directly too */}
       </UserContext.Provider>
 
       <Footer />
