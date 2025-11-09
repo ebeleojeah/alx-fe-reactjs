@@ -1,18 +1,8 @@
 function MainContent() {
   return (
-    <main
-      style={{
-        backgroundColor: '#e6f7ff',
-        padding: '20px',
-        minHeight: '200px',
-      }}
-    >
-      <h2 style={{ textAlign: 'center', color: '#333' }}>
-        Welcome to My Favorite Cities Page
-      </h2>
-      <p style={{ textAlign: 'center' }}>
-        Here you can find details about some amazing cities around the world!
-      </p>
+    <main style={{ backgroundColor: 'lightgray', padding: '20px' }}>
+      <h2 style={{ textAlign: 'center' }}>Main Content Area</h2>
+      <p>This is where the main content goes.</p>
     </main>
   );
 }
