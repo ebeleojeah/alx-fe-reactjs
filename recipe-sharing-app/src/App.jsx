@@ -3,6 +3,15 @@ import AddRecipeForm from './components/AddRecipeForm';
 import RecipeList from './components/RecipeList';
 import RecipeDetails from './components/RecipeDetails';
 import SearchBar from './components/SearchBar';
+import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList';
+
+// Wrapper to extract recipe ID from route params
+import { useParams } from 'react-router-dom';
+const RecipeDetailsWrapper = () => {
+  const { id } = useParams();
+  return <RecipeDetails recipeId={Number(id)} />;
+};
 
 function App() {
   return (
@@ -16,6 +25,8 @@ function App() {
               <SearchBar />
               <AddRecipeForm />
               <RecipeList />
+              <FavoritesList />
+              <RecommendationsList />
             </>
           }
         />
@@ -24,12 +35,5 @@ function App() {
     </Router>
   );
 }
-
-// Wrapper to extract recipe ID from route params
-import { useParams } from 'react-router-dom';
-const RecipeDetailsWrapper = () => {
-  const { id } = useParams();
-  return <RecipeDetails recipeId={Number(id)} />;
-};
 
 export default App;
