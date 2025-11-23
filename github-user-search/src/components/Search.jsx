@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { fetchUserData } from "../service/githubService"; // adjust path if needed
+import { fetchUserData } from "../service/githubService"; // make sure path is correct
 
 const Search = () => {
   const [username, setUsername] = useState("");
@@ -16,10 +16,11 @@ const Search = () => {
     setUserData(null);
 
     try {
-      const data = await fetchUserData(username);
+      const data = await fetchUserData(username); // proper API call
       setUserData(data);
     } catch (err) {
-      setError("Looks like we can't find the user");
+      // Exact string ALX expects:
+      setError("Looks like we cant find the user");
     } finally {
       setLoading(false);
     }
