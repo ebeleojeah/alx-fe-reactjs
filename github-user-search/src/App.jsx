@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
-import SearchUser from "./components/SearchUser";
+import Search from "./components/Search";
 
 function App() {
   return (
     <div>
       <h1>GitHub User Search App</h1>
-      <SearchUser />
+      <Search />
     </div>
   );
 }
