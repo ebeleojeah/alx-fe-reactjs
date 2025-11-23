@@ -1,10 +1,12 @@
 import React from "react";
-import "./App.css";  // make sure this file exists
+import "./App.css";
+import SearchUser from "./components/SearchUser";
 
 function App() {
   return (
     <div>
       <h1>GitHub User Search App</h1>
+      <SearchUser />
     </div>
   );
 }
