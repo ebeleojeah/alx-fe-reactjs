@@ -1,5 +1,15 @@
 import { useState, useEffect } from "react";
 import recipesData from "../data.json";
+import { Link } from "react-router-dom";
+
+// Inside the map loop, replace the <a> tag with:
+<Link
+  to={`/recipe/${recipe.id}`}
+  className="inline-block mt-4 text-blue-500 hover:underline"
+>
+  View Recipe
+</Link>
+
 
 export default function HomePage() {
   const [recipes, setRecipes] = useState([]);
