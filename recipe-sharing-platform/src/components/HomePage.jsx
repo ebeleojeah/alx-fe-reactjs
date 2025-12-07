@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import recipesData from "../data.json";
 
-
 export default function HomePage() {
   const [recipes, setRecipes] = useState([]);
 
@@ -12,10 +11,12 @@ export default function HomePage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-8">Recipe Sharing Platform</h1>
+      <h1 className="text-3xl font-bold text-center mb-8">
+        Recipe Sharing Platform
+      </h1>
 
-      {/* Grid layout */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Responsive Grid Layout */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {recipes.map((recipe) => (
           <div
             key={recipe.id}
