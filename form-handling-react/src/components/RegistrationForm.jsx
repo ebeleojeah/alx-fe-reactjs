@@ -1,80 +1,58 @@
 import { useState } from "react";
 
 const RegistrationForm = () => {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
-
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  // Handle input change
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  // Handle form submission
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     // Basic validation
-    if (!formData.username || !formData.email || !formData.password) {
+    if (username === "" || email === "" || password === "") {
       setError("All fields are required");
       return;
     }
 
     setError("");
 
-    // Mock API call
-    try {
-      const response = await fetch("https://jsonplaceholder.typicode.com/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+    // Mock API payload
+    const userData = {
+      username,
+      email,
+      password,
+    };
 
-      const data = await response.json();
-      console.log("User Registered:", data);
-      alert("Registration successful!");
-    } catch (err) {
-      console.error(err);
-    }
+    console.log("User Registered:", userData);
+    alert("Registration successful!");
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>User Registration (Controlled)</h2>
+      <h2>User Registration (Controlled Components)</h2>
 
       {error && <p style={{ color: "red" }}>{error}</p>}
 
       <input
         type="text"
-        name="username"
         placeholder="Username"
-        value={formData.username}
-        onChange={handleChange}
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
       />
 
       <input
         type="email"
-        name="email"
         placeholder="Email"
-        value={formData.email}
-        onChange={handleChange}
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
       />
 
       <input
         type="password"
-        name="password"
         placeholder="Password"
-        value={formData.password}
-        onChange={handleChange}
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
       />
 
       <button type="submit">Register</button>
