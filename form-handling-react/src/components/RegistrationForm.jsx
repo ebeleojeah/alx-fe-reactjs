@@ -4,20 +4,28 @@ const RegistrationForm = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Basic validation
-    if (username === "" || email === "" || password === "") {
-      setError("All fields are required");
+    if (!username) {
+      setErrors("Username is required");
       return;
     }
 
-    setError("");
+    if (!email) {
+      setErrors("Email is required");
+      return;
+    }
 
-    // Mock API payload
+    if (!password) {
+      setErrors("Password is required");
+      return;
+    }
+
+    setErrors("");
+
     const userData = {
       username,
       email,
@@ -32,7 +40,7 @@ const RegistrationForm = () => {
     <form onSubmit={handleSubmit}>
       <h2>User Registration (Controlled Components)</h2>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {errors && <p style={{ color: "red" }}>{errors}</p>}
 
       <input
         type="text"
